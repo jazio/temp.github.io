@@ -1,0 +1,103 @@
+PHP
+
+ini_get — Gets the value of a configuration option (from php.ini)
+  // Check availability of cURL on the system.
+  $basedir = ini_get("open_basedir");
+  return function_exists('curl_init') && !ini_get('safe_mode') && empty($basedir);
+See http://lu1.php.net/ini_get
+
+
+call_user_func_array — Call a callback with an array of parameters 
+$_POST vs. $_SESSION
+
+The post variable is only needed once to get the initial data from the form. After you retrieve the data from the form you can store it in a session variable. The data you store in the session variable will be available to any of your scripts 
+
+Difference between if(isset($var)) and if($var)
+
+Using if ($var)
+
+You'll test if $var contains a value that's not false -- 1 is true, 123 is too, …
+
+
+Using isset(), 
+
+you'll test if a variable has been set -- i.e. if any not-null value has been written to it. 
+
+Well, the answer is pretty simple. isset( $var ) returns whether or not a variable exists and is not null, where !$var tells you if that variable is true, or anything that evaluates to true (such as a string). Also, using !$var will output a notice that you're using an undefined variable, whereas isset won't do that.
+Mind you: they are two different things:
+var_dump( isset( $foo ) ); // false.
+var_dump( !$foo ); // true, but with a warning.
+
+$foo = false;
+var_dump( isset( $foo ) ); // true
+var_dump( !$foo ); // true.
+
+Type Hinting
+PHP 5 introduces type hinting. Functions are now able to force parameters to be objects (by specifying the name of the class in the function prototype), interfaces, arrays or callable.
+
+
+Function handling functions
+http://lu1.php.net/manual/en/ref.funchand.php
+These are using for call user functions, creating anonymous (lambda) functions, getting functions
+<?php
+function barber($type)
+{
+    echo "You wanted a $type haircut, no problem\n";
+}
+call_user_func('barber', "mushroom");
+call_user_func('barber', "shave");
+?> 
+
+The above example will output:
+You wanted a mushroom haircut, no problem
+You wanted a shave haircut, no problem
+
+
+
+
+<?php
+
+namespace Foobar;
+
+class Foo {
+    static public function test() {
+        print "Hello world!\n";
+    }
+}
+
+call_user_func(__NAMESPACE__ .'\Foo::test'); // As of PHP 5.3.0
+call_user_func(array(__NAMESPACE__ .'\Foo', 'test')); // As of PHP 5.3.0
+
+?>
+
+The above example will output:
+Hello world!
+Hello world!
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+ PHP
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+Dependency Injection.
+-------------------------------------------------------------------------------------------------
+Design pattern. Turn procedural code into loosely coupled classes called services, that can be swapped out and used standalone.
+Ease the testing.
+
+Example.
+User class storing the actual user data. Session Storage class storing the actual state of preferences between 2 requests.
+User needs storage class: The usual way: you instantiate the session storage in the User constructor. Easy to use but harder to customize.
+With dependency injection: you instantiate the session storage outside the user class, assign to a variable then inject into the user. Easy to customize, slightly harder to use.
+
+https://amsterdam2014.drupal.org/session/dependency-injection
+
+
+
+
+Codesniffer
+
+$ phpcs --standard=drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt' ./sites/all/modules/enrd/features/
+

@@ -1,0 +1,6 @@
+The standard aproach in Drupal on data is it should be validated but not filtered before saving into DB. You should filter it when rendering data.
+check_markup run data through input filters and sanitize it, assuming the filters are properly set up.
+
+
+Altering the presentation layout of a node/entity could be done a several levels:
+Early by altering the unrendered (yet) array via hooks: hook_node_view and hook_node_view_alter respectively hook_entity_view, hook_entity_view_alter. Here you could alter properties like (properties are set with #): #markup, #weight, #access (visibility) of node/entity fields. A later level would be at presentation later: preprocess and template level.

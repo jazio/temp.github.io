@@ -1,0 +1,1 @@
+bitbucket (free) + codeship (free account) + cloudatcost (14€)

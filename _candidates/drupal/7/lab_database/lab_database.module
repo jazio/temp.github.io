@@ -1,0 +1,26 @@
+<?php
+
+function lab_database_menu() {
+  $items = array();
+
+  $items['lab/lab_database'] = array(
+    'title' => 'Database Example',
+    'page callback' => 'lab_database',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+function lab_database() {
+  $output = 'Welcome to' . arg(1);
+
+
+  $result = db_select('lab_database','n')
+          ->fields('n',array('type'))
+          ->execute();
+
+  dpm($result);
+  return $output;
+}

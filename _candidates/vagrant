@@ -1,0 +1,33 @@
+Vagrant
+-------------------------------------------------------------------------------------------------
+vagrant ssh
+
+enter machine
+vagrant provision - when you do changes inside machine
+vagrant reload - when you did changes outside (e.g. adding a cookbook)
+
+Caching in Drupal
+https://www.drupal.org/node/1401522
+Anonymous caching: Vagrant. Cache on admin side: Memcached. Boost not recommnded: creates duplicate paths.
+
+NFS file system is necessary to speed up a vagrant machine.
+it was developed to allow machines to mount a disk partition on a remote machine as if it were a local disk. It allows for fast, seamless sharing of files across a network.
+
+#sudo apt-get install nfs-kernel-server nfs-common portmap
+
+
+VDD
+Using Chef Solo for provisioning
+VLAD 
+Using Ansible for provisioning
+https://bitbucket.org/philipnorton42/vlad
+
+Vagrant 1.4+ comes with the Ansible provisioning tool included so there is no need to install extra plugins.
+Vagrant Perfomance: Caching
+You can also install the Vagrant Cachier plugin in order to cache apt-get and gem requests, which speeds up reprovisioning.
+vagrant plugin install vagrant-cachier
+
+
+
+
+

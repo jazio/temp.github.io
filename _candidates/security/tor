@@ -1,0 +1,13 @@
+#################################################################################################
+#
+# TOR.
+#
+#################################################################################################
+
+Tor 
+
+Tor Browser
+
+You can edit exit points by adding {de} where de could be any country code in your torrc file.
+
+During the bouncing the connection is encrypted several times. The connection is not encrypted when it leaves the latest node (called exit node).

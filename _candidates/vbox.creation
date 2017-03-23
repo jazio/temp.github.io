@@ -1,0 +1,59 @@
+Virtual Box
+
+Creation Steps
+
+1. Add OS
+2. add a virtual hdd
+If you skip this step you will to configure it when the machine is created.
+
+I added the downloaded file lubuntu.
+Dynamically allocated space
+HDD space 8GB
+
+$ ifconfig
+will show the eth0 configuration.
+
+service networking restart/stop/start
+
+post the output of
+
+cat /etc/network/interfaces
+
+ had cloned virtual box ubuntu server vdi file with new UUID:
+
+VBoxManage clonehd <paste UUID of vdi file> Clonename.vdi
+
+After attaching new cloned vdi file and after starting vm, the ethernet interface show error message:
+
+Cannot find device "eth0"
+Failed to bring up eth0
+
+The above error was solved by using the command:
+
+sudo rm -rf /etc/udev/rules.d/70-persistent-net.rules
+
+sudo reboot
+
+The above command will remove network persistence rules.
+
+or
+Comment the OLD MAC entries (e.g. # SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="08:00:27:XX:XX:XX", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth1")
+
+
+https://j50l033:cU2M%3E!%3a7@158.169.9.13:8012
+
+
+Difference between the 2
+NAT --- you cannot access files in vm from external computers;
+Bridge (you can), less safer.
+
+bashit
+gitg
+
+
+
+
+
+https://farcaov@webgate.ec.europa.eu/CITnet/stash/scm/multisite/continuous-training-dev.git
+
+

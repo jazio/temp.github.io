@@ -1,0 +1,8 @@
+#PDO
+#Php Data Objects
+
+consistent interface for accessing PHP databases
+
+data access abstraction layer
+
+each specific database engine needs to implement PDO = driver

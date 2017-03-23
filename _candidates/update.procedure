@@ -1,0 +1,22 @@
+putty: SSH
+
+fpfis-mgmt.cc.cec.eu.int 22
+
+user: fpfis, no password (you have public key added)
+
+Playground
+------------------------------------------------------------------------------
+e.g.
+/ec/local/home/fpfis/reference/php-clusters/multis
+yground/multisiteplayground_master_production.1.7/sites/antitrafficking/themes
+
+svn up
+if no message
+
+svn co https://webgate.ec.europa.eu/CITnet/svn/MULTISITE/trunk/custom_subsites/antitrafficking/themes
+Take the path from repo browser.
+
+next time use svn up
+gacp
+
+follow steps.

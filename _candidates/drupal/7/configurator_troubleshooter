@@ -1,0 +1,20 @@
+@concerns Drupal 7
+
+Blocks
+
+How adding multiple instances of a block in a page.
+----------------------------------------------------
+Use Context module. You simply add this block in different contexts. You can use it only once per context.
+
+
+Vocabularies
+
+When I edit a node I don't get taxonomy terms in the autocompleter.
+----------------------------------------------------
+Check admin/structure/types/manage/, choose your content type then find field Term settings.
+There in Vocabulary select, you can choose your vocabulary.
+
+
+Exporting configuration.
+----------------------------------------------------
+Features module. You can export most of the configuration, variables (Strongarm module), Fields (Base field + instances in Features 2+), Views, Rules, vocabularies, terms (only with Features Extra), nodequeues (only definitions, use fe_nodequeue module to export all), blocks (fe_block module, it also exports, block settings, visibility), fe_block and fe_nodequeues are included in Feature Extra module.

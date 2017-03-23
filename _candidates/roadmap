@@ -1,0 +1,36 @@
+#  Roadmap
+## keep track of technical todos.
+
+
+## Untracked
+- study zariz and zariz yo generator.
+- Kickstart AngularJS using Yeoman, Grunt and Bower.
+- Learn basic grunt, sass, compass
+- Learn Jekyll
+Extend multisite_review
+#Read articles related to LAMP on Mint
+Drupal 8 theme
+
+```
+* [1](http://community.linuxmint.com/tutorial/view/486)
+* [1] http://community.linuxmint.com/tutorial/view/805*
+* [1] http://community.linuxmint.com/tutorial/view/1288
+* [1] http://tutorialforlinux.com/2014/06/16/how-to-create-an-apache-2-virtual-host-on-linux-mint-16-petra-quick-start-guide/
+```
+## Drupal 8 First Theme: coriolis
+
+
+Backlog.
+-------------------------------------------------------------------------------------------------
+Use phpstorm debugger inside vagrant (vlad and vdd)
+Contribute Drupal8. Register Sprints.
+
+
+Read your first guides to sprint
+Consult the list: who's coming: https://docs.google.com/spreadsheet/ccc?key=0AlRKD0XsivA1dDRIZEFCeXR2ZF9tQzVTU0lRN2lWRnc&usp=drive_web#gid=0
+https://www.genuineinteractive.com/blog/blog-posts/genuine-thoughts/helpful-guide-first-sprint/
+Read Drupal Ladder http://drupalladder.org/learn-sprints
+
+Read Guzzle
+http://juliendubreuil.fr/blog/developpement/guzzle-des-webservices-facilement/
+Read apache2.conf
