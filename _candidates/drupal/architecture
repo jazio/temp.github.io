@@ -1,3 +1,13 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+ DRUPAL 7
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+It is essentially a php 4 application: superglobals + code. The output is printed using header() + print $output. The order is uncontrolled, php easily will break.
+Responses are strings instead objects.
+
+
 The standard aproach in Drupal on data is it should be validated but not filtered before saving into DB. You should filter it when rendering data.
 check_markup run data through input filters and sanitize it, assuming the filters are properly set up.
 

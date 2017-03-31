@@ -3,9 +3,6 @@
 
 
 
-
-
-
 # Starting a project on github.com
 
 Initialize this repository with a README
@@ -14,6 +11,7 @@ This will allow you to git clone the repository immediately. Skip this step if y
 Then locally:
 ```
 $ git init
+
 $ git remote add origin https://github.com/jazio/silexbasic.git
 fatal: remote origin already exists.
 $ git remote -v

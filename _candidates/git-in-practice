@@ -1,0 +1,115 @@
+"I decided I could write something better than everything out there in two weeks. And I was right." --Linus Torvalds﻿
+
+http://alexdiliberto.com/talks/all-things-git/#/1
+
+Distributed means nobody is special Linus Torvalds
+
+
+http://www.m62.net/presentation-theory/bullet-points-dont-work/visual-aids-gone-wrong/
+
+
+
+How to undo wrongfully commited work?
+How to correct commits not push yet? How to correct a wrong commit push to repository?
+How to incorporate forgotten files into a commit? 
+How not to do things.
+How to perform advanced interrogations to repository?
+Search for specific commits description, author. Searching for strings inside repository.
+How to perform useful diffs between commits, branches?
+How not to do things.
+How to rewrite the history?
+Perform branch rebasing. merge vs rebase. 
+How not to do things. 
+Never use it on public branches!
+ 
+How to solve conflicts?
+Simple. Using a diff tool
+How not to do things..
+ 
+ 
+Not sure yet but could be:
+ 
+How to move granular single commits? (with cherry-pick)
+How to perform searches to find introduced bugs? (with binary search)
+
+
+git flow hotfix finish
+
+
+Manually :
+In order to merge a hotfix manually (without git flow), please follow these steps. This is assuming you have a hotfix branch called hotfix/NEXTEUROPA-3901 which was branched off the master branch.
+# First let's make sure we downloaded the latest changes.
+$ git fetch
+
+
+# Merge the hotfix branch into the master branch, making sure we're up to date with the remote.
+$ git checkout master
+$ git reset --hard origin/master
+$ git merge hotfix/NEXTEUROPA-3901
+
+
+# Tag the release on the master branch and push the tag.
+$ git tag -am "Release 2.0.6." 2.0.6
+$ git push --tags
+
+
+# Check out the develop branch and make sure we're up to date with the remote.
+$ git checkout develop
+$ git reset --hard origin/develop
+
+
+# Merge the master branch into the develop branch. You might need to solve a merge conflict.
+$ git merge master
+$ git push
+
+
+# We're almost done, just remove the hotfix branch, it's not needed any more.
+$ git branch --delete hotfix/NEXTEUROPA-3901
+$ git push origin --delete hotfix/NEXTEUROPA-3901
+
+
+To resume:
+create hotfix branch from master
+fix task on hotfix branch
+merge hotfix on master (pull request)
+create tag
+merge master on develop
+delete hotfix branch
+How to get started contributing on platform?
+Creating, fetching (checkout), deleting branches, perform pull requests. Cleanup unwanted files.
+How to create good commits.
+https://www.atlassian.com/git/tutorials/using-branches/git-branch
+How not to do things.
+Do not push unfinished work
+Do not push force
+Do not skip code violations standards
+
+Command line instructions
+Git global setup
+git config --global user.name "Ovi Farcas"
+git config --global user.email "farcaso@gmail.com"
+
+
+Create a new repository
+git clone git@gitlab.com:jazio/git-at-ec.git
+cd git-at-ec
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+
+Existing folder or Git repository
+cd existing_folder
+git init
+git remote add origin git@gitlab.com:jazio/git-at-ec.git
+git add .
+git commit
+git push -u origin master
+
+
+
+ 
+
+
+

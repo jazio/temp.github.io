@@ -1,0 +1,12 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+ DRUPAL 8
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+API is more consistent. Building blocks are created the same way.
+A request message managed by http server is causing a response object to return. All is handled by the Symfony HttpKernel. Never touch superglobals again.
+Instead touch the object that does the black magic and output the response.
+Everything Drupal does is inside the HttpKernelInterface that has only one method handle(Request $request) and turn the request into response.
+during the request the controller fires: is the callable thing that is responsable for the request. Tha controller can return a response.
+The response is not necessarly an array but can be plain HTML, json etc.

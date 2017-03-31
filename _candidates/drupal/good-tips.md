@@ -17,6 +17,7 @@ Organize your functionality around a class.
 Do database queries using entity meta wrapper or EntityFieldQuery rather on db database API
 
 Use Drupal php wrappers. They already solved problems of security, UTF-8 etc
+Downside the php/drupal wrappers are not 100% compatible.
 
 
 

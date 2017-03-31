@@ -2,8 +2,9 @@ Encrypt tar.gz file on create
 
 Pack your_dir in a encrypted archive your_archive.tgz.gpg (symmetric encryption):
 
+```
 tar -cz your_dir | gpg -c -o your_archive.tgz.gpg
-
+```
 Unpack it:
 
 gpg -d your_archive.tgz.gpg | tar xz

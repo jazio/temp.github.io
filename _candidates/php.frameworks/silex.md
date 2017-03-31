@@ -1,3 +1,9 @@
+create-project#
+
+You can use Composer to create new projects from an existing package. This is the equivalent of doing a git clone/svn checkout followed by a composer install of the vendors.
+
+
+
 .HTACCESS
 
 
@@ -38,15 +44,17 @@ Prevent anyone to retrieve files inside templates folder
 Silex for sublime
 https://sublime.wbond.net/packages/Silex%20Snippets
 <?php
-// Error Handlers
-// Exceptions
+
+# Error Handling
 use Symfony\Component\HttpFoundation\Response;
 
+```
 $app->error(function (\Exception $e) use ($app) {
     return new Response('Wooops, page not found!');
 });
-
+```
 or with Twig
+```
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -62,21 +70,29 @@ $app->error(
         return $app['twig']->render('error.twig', array('code' => $code));
     }
 );
+```
 
-
-How to add menu 
+# How to add menu 
 
 Need to add bind to paths,
+```
 $app->get('/blog', function () use ($blogPosts) {
 ...
 // Optional nameroutes to be used with UrlGenerator Provider 
 })->bind('blog');
- then
+```
+
+then
+
+```
 use Silex\Provider\UrlGeneratorServiceProvider;
 $app->register(new UrlGeneratorServiceProvider());
-then in twig template
-<li><a href="{{ path('blog') }}">blog</a></li>
+```
 
+then in twig template
+```
+<li><a href="{{ path('blog') }}">blog</a></li>
+```
 
 If you don't want to use UrlGenerator
 
@@ -92,15 +108,17 @@ If you don't want to use UrlGenerator
 
 
 Add basic layout
+```
 // Add layout
 $app->before(function () use ($app) {
     $app['twig']->addGlobal('layout', $app['twig']->loadTemplate('layout.twig'));
 });
+```
 
 
+# Register forms
 
-Register forms
-
+```
 // Exceptions
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -135,8 +153,11 @@ $app->match('/contact', function (Request $request) use ($app) {
         'form' => $form->createView()
         ));
 })->bind('contact');
+```
 
+Templates
 
+```
 {% extends 'layout.twig' %}
 {% set active = 'contact' %}
 {% block content %}
@@ -144,6 +165,7 @@ $app->match('/contact', function (Request $request) use ($app) {
     {{ form_widget(form) }}
     <input type="submit" name="submit" />
 {% endblock %}
+```
 
 Form template improved
 
@@ -159,10 +181,11 @@ Form template improved
 
 
 
-Organizing our routes
+##Organizing our routes
 
 Even on a static website you should have a lot of really static webpages, resulting in many actions. Here is a snippet showing a way to avoid code duplication:
 
+```
 $routes = array(
     'home' => array('url' => '/', 'template' => 'home.html.twig'),
     'references' => array('url' => 'references', 'template' => 'references.html.twig'),
@@ -175,13 +198,12 @@ foreach ($routes as $routeName => $data) {
         return $app['twig']->render($data['template']);
     })->bind($routeName);
 }
+```
 
-connect to jazio
 
-putty
-jazio.net 15554
-Aaini2091~Ae
 
+
+```
 use Symfony\Component\HttpFoundation\Response;
 // path() usage in twig
 use Silex\Provider\TwigServiceProvider;
@@ -192,11 +214,9 @@ use Symfony\Component\Yaml\Yaml;
 use Silex\Provider\FormServiceProvider;
 // mandatory for using forms
 use Silex\Provider\TranslationServiceProvider;
+```
 
 
-create-project#
-
-You can use Composer to create new projects from an existing package. This is the equivalent of doing a git clone/svn checkout followed by a composer install of the vendors.
 
 application/x-www-form-urlencoded   Default. All characters are encoded before sent (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)
 multipart/form-data No characters are encoded. This value is required when you are using forms that have a file upload control
@@ -209,9 +229,11 @@ SwiftMailer
 headers
 http://swiftmailer.org/docs/headers.html
 
-Debugging Silex 
-How to debug templates
+## Debugging Silex 
+###How to debug templates
+
 Use dump()
+```
 {% if posts %}
     {% for post in posts %}
     {{ dump(post) }}
@@ -220,15 +242,18 @@ Use dump()
 {% else %}
     <p>No posts found.</p>
 {% endif %}
-
+```
 
 
 https://github.com/symfony/Debug
 
+```
 "symfony/debug": "~2.3",
+```
 
 Debug provides tools to make debugging easier.
 Enabling all debug tools is as easy as calling the enable() method on the main Debug class:
+```
 use Symfony\Component\Debug\Debug;
 
 Debug::enable();
@@ -244,5 +269,6 @@ if ('cli' !== php_sapi_name()) {
 } elseif (!ini_get('log_errors') || ini_get('error_log')) {
     ini_set('display_errors', 1);
 }
+```
 Note that the Debug::enable() call also registers the debug class loader from the Symfony ClassLoader component when available.
 

@@ -1,21 +1,4 @@
-  You can delete a field (with instances) that simple
-  
-  ```
-  field_delete_field('field_name_of_field');
-  field_purge_batch(1);
-  ```
-  
-  or just instances:
-  
-  ```
-  if ($instance = field_info_instance('field_name_of_field1', 'field_name_of_field2', 'field_name_of_field3')) {
-    field_delete_instance($instance, TRUE);
-    field_purge_batch(1);
-  }
-  ```
-  
-  Fetching a field and if the field is set then render a specific form. This is a typical functionality for a Survey.
-  
+
   // Query for reference field in the master.
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'entityform');

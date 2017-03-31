@@ -1,0 +1,37 @@
+Interconnecting chat systems: slacks accounts, irc.freenode (Drupal): https://www.irccloud.com/, then you need to go into your slack accounts and enable Gateway (tips from Pol Dellaira).
+
+Static site generator --
+Wintersmith - nodejs based static site generator
+
+Java Game Developing --
+Ionic - Platform for javascript game developing
+
+Continuous Integration --
+Codeship + Bitbucket - best combination for free continuous integration
+
+Frontend --
+BEM - methodology for css class naming, easier than smacss but goood architecture as oocss
+
+
+Benchmarking --
+
+ApacheBench - command line tool to test the capability of a http server
+
+Trigger 1000 requests with a concurency of 100
+E.g ab -n 1000 -c 100 http://localhost:4567/
+
+Ruby
+
+Rvm - ruby version manager for easy work with ruby
+Thin - popular web server
+Sinatra - microframewrok based on ruby
+
+PHP
+
+Microframeworks: Slim, Silex
+
+Blackfire.io 
+Performance benchmark tool, same to grind.
+It can be used in CI, QA to find hidden performance problems
+It can do Visual Acceptance. It helps understand how your code consumes resources: CPU, I/O time, HTTP calls, SQL queries. Prompt build reports.
+
