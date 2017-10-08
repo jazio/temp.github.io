@@ -1,0 +1,8 @@
+PHP
+
+Microframeworks: Slim, Silex
+
+Blackfire.io 
+Performance benchmark tool, same to grind.
+It can be used in CI, QA to find hidden performance problems
+It can do Visual Acceptance. It helps understand how your code consumes resources: CPU, I/O time, HTTP calls, SQL queries. Prompt build reports.
