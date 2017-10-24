@@ -4,8 +4,7 @@
 # A JOIN is a means for combining fields from two tables by using values common to each.
 #
 
-/* Go to the sql console*/
-drush sql-cli
+Go to the sql console: `$ drush sql-cli`
 
 
 /* Display the name of all tables*/
@@ -17,7 +16,7 @@ select * from system;
 select * from system where name='apachesolr';
 
 
-
+```
  SHOW GLOBAL VARIABLES like 'query%';
  1006  +------------------------------+-----------+
  1007  | Variable_name                | Value     |
@@ -30,3 +29,19 @@ select * from system where name='apachesolr';
  1014  | query_cache_wlock_invalidate | OFF       |
  1015  | query_prealloc_size          | 8192      |
  1016  +------------------------------+-----------+
+```
+
+
+$ drush sqlq "show tables like '%sweaver%';"
+
+sweaver_image
+
+sweaver_property
+
+sweaver_selector
+
+sweaver_style
+
+sweaver_style_draft
+
+sweaver_type
