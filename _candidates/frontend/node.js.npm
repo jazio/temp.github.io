@@ -1,0 +1,26 @@
+## Installing node.js
+
+### Prerequisites: 
+
+Install npm package manager
+
+``
+sudo apt-get install npm
+```
+
+
+## node
+n is a tool to install different versions of node.
+
+Updated nodejs - Install n a tool to install latest nodejs
+
+```
+$ sudo npm cache clean -f
+$ sudo npm install -g n
+```
+# Install latest
+```
+$ n latest
+# nodejs -v // version 7 is not the best for ionic so I downgraded to 6.9.1
+$ sudo n 6.9.1
+```
